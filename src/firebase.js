@@ -3,15 +3,14 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-// TODO: Replace with your Firebase config
-// Get this from Firebase Console > Project Settings > Your apps > Firebase SDK snippet
+// Firebase configuration using environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyD6O53A9qZyoWRvHzjDLFviPPGmRrlYPxI",
-  authDomain: "reference-be7cf.firebaseapp.com",
-  projectId: "reference-be7cf",
-  storageBucket: "reference-be7cf.firebasestorage.app",
-  messagingSenderId: "184074744732",
-  appId: "1:184074744732:web:316ae56e303e23e2880e59"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
